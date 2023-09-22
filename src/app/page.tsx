@@ -4,8 +4,8 @@ import Card from "@/components/card";
 export default async function Home() {
   const deals = await getDeals();
   return (
-    <main>
-      <ul>
+    <main className="flex justify-center">
+      <ul className="grid gap-4 grid-cols-3 max-w-4xl">
         {deals.map((data) => (
           <Card key={data.id} data={data} />
         ))}
