@@ -1,9 +1,12 @@
 import { Deals } from "@/api/types";
 import Image from "next/image";
+import Saving from "./saving";
 
 export default function Card({ data }: { data: Deals }) {
+  console.log(data);
   return (
-    <li className="flex flex-col items-center p-4 border rounded border-red-500 max-w-xs">
+    <li className="flex flex-col items-center pt-14 pb-8 border rounded border-pink-800 max-w-xs">
+      <Saving value={data.savings} />
       <Image
         src={data.thumb}
         alt={`${data.title} image`}
