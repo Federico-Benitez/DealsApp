@@ -22,8 +22,8 @@ export default function Card({ data }: { data: Product }) {
 
   return (
     <li
-      className={`grid grid-rows-4 h-128 px-8 py-6 outline rounded-lg  max-w-md ${
-        isSelected ? "outline-pink-800 bg-slate-800" : "outline-gray-800"
+      className={`grid grid-rows-4 px-8 py-6 outline rounded-lg w-80 ${
+        isSelected ? "outline-pink-800 bg-slate-800" : "outline-gray-900"
       }`}
     >
       <div>
@@ -31,16 +31,20 @@ export default function Card({ data }: { data: Product }) {
         <Image
           src={data.thumb}
           alt={`${data.title} image`}
-          width={309}
-          height={300}
+          width={320}
+          height={200}
         />
       </div>
       <span className="text-xl font-bold text-left py-4">{data.title}</span>
 
       <Rating value={data.steamRatingPercent} />
-      <button className="bg-pink-800 rounded-lg" onClick={handleSelect}>
-        <p className="line-through">{data.normalPrice}</p>
-        <p>{data.salePrice}</p>
+      {/* Card Button */}
+      <button
+        className="flex justify-center self-end items-center h-min py-4 bg-gradient-to-r from-orange-300 from-1%  via-rose-500 via-20% to-fuchsia-800 to-90% rounded-lg"
+        onClick={handleSelect}
+      >
+        <p className="line-through font-bold mr-2">${data.normalPrice}</p>
+        <p className="font-bold text-xl">${data.salePrice}</p>
       </button>
     </li>
   );
