@@ -3,9 +3,8 @@
 import { useSearchContext } from "@/context/SearchContext";
 
 export default function NoResultsMessage() {
-  const { searchValue, onChangeValue } = useSearchContext();
+  const { searchValue, clearSearch } = useSearchContext();
 
-  const clearSearch = () => onChangeValue("");
   return (
     <div className="h-128 grid justify-items-center ">
       <h3 className="text-7xl text-center max-w-6xl">
