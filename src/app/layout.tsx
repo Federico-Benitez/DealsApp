@@ -4,6 +4,7 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import Footer from "@/components/footer";
 import { DealsProvider } from "@/context/DealsContext";
+import TotalPriceBanner from "@/components/totalPrice";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -23,6 +24,7 @@ export default function RootLayout({
         <DealsProvider>
           <Header />
           {children}
+          <TotalPriceBanner />
           <Footer />
         </DealsProvider>
       </body>
