@@ -5,7 +5,7 @@ export default async function Home() {
   const deals = await getDeals();
   return (
     <main className="flex justify-center py-10">
-      <ul className="grid gap-4 grid-cols-3 max-w-4xl">
+      <ul className="grid gap-4 grid-cols-3 max-w-6xl">
         {deals.map((data) => (
           <Card key={data.id} data={data} />
         ))}

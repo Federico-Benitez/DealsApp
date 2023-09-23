@@ -22,7 +22,7 @@ export default function Card({ data }: { data: Product }) {
 
   return (
     <li
-      className={`grid grid-rows-4 px-8 py-6 hover:outline rounded-lg hover:outline-gray-500 max-w-xs ${
+      className={`grid grid-rows-4 h-128 px-8 py-6 hover:outline rounded-lg hover:outline-gray-500 max-w-md ${
         isSelected ? "outline outline-pink-800 bg-slate-800" : ""
       }`}
     >
@@ -31,7 +31,7 @@ export default function Card({ data }: { data: Product }) {
         <Image
           src={data.thumb}
           alt={`${data.title} image`}
-          width={240}
+          width={309}
           height={300}
         />
       </div>
