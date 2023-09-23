@@ -14,6 +14,7 @@ interface DealsContext {
   items: { id: Product["id"]; price: string }[];
   addItem: (item: Product) => void;
   removeItem: (item: Product) => void;
+  clearItems: () => void;
 }
 const DealsContext = createContext<DealsContext | null>(null);
 
@@ -38,14 +39,17 @@ export function DealsProvider({ children }: { children: React.ReactNode }) {
     });
   }, []);
 
+  const clearItems = useCallback(() => setItems([]), []);
+
   const value = useMemo(
     () => ({
       price,
       items,
       addItem,
       removeItem,
+      clearItems,
     }),
-    [price, items, addItem, removeItem]
+    [price, items, addItem, removeItem, clearItems]
   );
 
   return (
