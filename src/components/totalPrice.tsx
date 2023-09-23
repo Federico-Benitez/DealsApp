@@ -6,6 +6,8 @@ import React from "react";
 export default function TotalPriceBanner() {
   const { price } = useDealsContext();
 
+  if (!price) return null;
+
   return (
     <div className="py-6 bg-orange-300 sticky bottom-0 flex justify-center align-middle">
       <h4 className="text-2xl pr-4 text-gray-600">Precio Total</h4>
