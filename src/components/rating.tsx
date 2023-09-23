@@ -1,3 +1,4 @@
+import calculateRate from "@/utils/calculateRate";
 import Image from "next/image";
 
 export default function Rating({ value }: { value: string }) {
@@ -23,10 +24,4 @@ export default function Rating({ value }: { value: string }) {
       </div>
     </div>
   );
-}
-
-function calculateRate(value: string) {
-  //fix this
-  const rate = Math.floor((Number(value) - 1) / 20) + 1;
-  return rate;
 }
