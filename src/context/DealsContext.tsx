@@ -12,15 +12,18 @@ import {
 interface DealsContext {
   price: number;
   items: { id: Product["id"]; price: string }[];
-  addItem: (item: any) => void;
-  removeItem: (item: any) => void;
+  addItem: (item: Product) => void;
+  removeItem: (item: Product) => void;
 }
 const DealsContext = createContext<DealsContext | null>(null);
 
 export function DealsProvider({ children }) {
   const [items, setItems] = useState<DealsContext["items"]>([]);
 
-  const price = 0;
+  const price = useMemo(
+    () => items.reduce((prev, curr) => prev + Number(curr.price), 0),
+    [items]
+  );
 
   const addItem = useCallback((data: Product) => {
     setItems((oldItems) => [
