@@ -23,8 +23,8 @@ export default function Card({ data }: { data: Product }) {
 
   return (
     <li
-      className={`grid grid-rows-4 px-8 py-6 outline rounded-lg w-80 ${
-        isSelected ? "outline-pink-800 bg-slate-800" : "outline-gray-900"
+      className={`grid grid-rows-4 px-8 pt-8 outline rounded-lg w-80 ${
+        isSelected ? "outline-pink-800" : "outline-gray-900"
       }`}
     >
       <div>

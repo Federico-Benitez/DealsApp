@@ -15,7 +15,7 @@ export default function Button({ onClick, isSelected, children }: Props) {
       onMouseEnter={() => setIsHover(true)}
       onMouseLeave={() => setIsHover(false)}
       onClick={onClick}
-      className="flex justify-center self-end items-center h-min py-4 bg-gradient-to-r from-orange-300 from-1%  via-rose-500 via-20% to-fuchsia-800 to-90% rounded-lg text-xl"
+      className="flex justify-center mt-2 items-center h-min py-4 bg-gradient-to-r from-orange-300 from-1%  via-rose-500 via-20% to-fuchsia-800 to-90% rounded-lg text-xl"
     >
       {isHover ? (isSelected ? text.remove : text.add) : children}
     </button>
