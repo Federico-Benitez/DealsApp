@@ -1,7 +1,7 @@
 "use client";
 
 import { Product } from "@/api/types";
-import {
+import React, {
   createContext,
   useCallback,
   useContext,
@@ -17,7 +17,7 @@ interface DealsContext {
 }
 const DealsContext = createContext<DealsContext | null>(null);
 
-export function DealsProvider({ children }) {
+export function DealsProvider({ children }: { children: React.ReactNode }) {
   const [items, setItems] = useState<DealsContext["items"]>([]);
 
   const price = useMemo(

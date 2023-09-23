@@ -1,0 +1,24 @@
+"use client";
+
+import Card from "./card";
+import Search from "./search";
+import { useSearchContext } from "@/context/SearchContext";
+import NoResultsMessage from "./noResults";
+
+export default function ProductList() {
+  const { matchedItems } = useSearchContext();
+  return (
+    <div className="max-w-6xl">
+      <Search />
+      {!!matchedItems.length ? (
+        <ul className="grid gap-4 grid-cols-3 max-w-6xl">
+          {matchedItems.map((item) => (
+            <Card key={item.id} data={item} />
+          ))}
+        </ul>
+      ) : (
+        <NoResultsMessage />
+      )}
+    </div>
+  );
+}

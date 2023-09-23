@@ -22,8 +22,8 @@ export default function Card({ data }: { data: Product }) {
 
   return (
     <li
-      className={`grid grid-rows-4 h-128 px-8 py-6 hover:outline rounded-lg hover:outline-gray-500 max-w-md ${
-        isSelected ? "outline outline-pink-800 bg-slate-800" : ""
+      className={`grid grid-rows-4 h-128 px-8 py-6 outline rounded-lg  max-w-md ${
+        isSelected ? "outline-pink-800 bg-slate-800" : "outline-gray-800"
       }`}
     >
       <div>
