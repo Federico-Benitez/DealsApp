@@ -4,7 +4,7 @@ This is a project made with [Next.js](https://nextjs.org/)
 
 This proyect is deployed on Vercel
 
-Check the [project](deals-app-pi.vercel.app) to test it.
+Check the [project](https://deals-app-pi.vercel.app) to test it.
 
 ## Run it locally
 
