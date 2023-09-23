@@ -6,12 +6,13 @@ import Image from "next/image";
 import Saving from "./saving";
 import Rating from "./rating";
 import { useMemo } from "react";
+import Button from "./button";
 
 export default function Card({ data }: { data: Product }) {
   const { items, addItem, removeItem } = useDealsContext();
 
   const isSelected = useMemo(
-    () => items.find((item) => item.id === data.id),
+    () => !!items.find((item) => item.id === data.id),
     [items, data]
   );
 
@@ -39,13 +40,10 @@ export default function Card({ data }: { data: Product }) {
 
       <Rating value={data.steamRatingPercent} />
       {/* Card Button */}
-      <button
-        className="flex justify-center self-end items-center h-min py-4 bg-gradient-to-r from-orange-300 from-1%  via-rose-500 via-20% to-fuchsia-800 to-90% rounded-lg"
-        onClick={handleSelect}
-      >
+      <Button onClick={handleSelect} isSelected={isSelected}>
         <p className="line-through font-bold mr-2">${data.normalPrice}</p>
         <p className="font-bold text-xl">${data.salePrice}</p>
-      </button>
+      </Button>
     </li>
   );
 }
