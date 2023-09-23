@@ -20,7 +20,7 @@ export interface DealsResponse {
   thumb: string;
 }
 
-export interface Deals {
+export interface Product {
   id: DealsResponse["dealID"];
   savings: DealsResponse["savings"];
   thumb: DealsResponse["thumb"];

@@ -1,4 +1,4 @@
-import { Deals, DealsResponse, SteamRatingText } from "./types";
+import { Product, DealsResponse, SteamRatingText } from "./types";
 
 const url = "https://www.cheapshark.com/api/1.0/deals?storeID=1&upperPrice=15";
 
@@ -12,7 +12,7 @@ export default async function getDeals() {
   return adapatDeals(data);
 }
 
-function adapatDeals(data: DealsResponse[]): Array<Deals> {
+function adapatDeals(data: DealsResponse[]): Array<Product> {
   return data.map((deal) => ({
     id: deal["dealID"] ?? "",
     savings: deal["savings"] ?? "",
